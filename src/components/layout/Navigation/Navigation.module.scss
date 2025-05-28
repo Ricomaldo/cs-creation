@@ -1,0 +1,290 @@
+@use '@/styles/mixins';
+
+.mobileMenuToggle {
+  position: fixed;
+  top: var(--space-lg);
+  left: var(--space-lg);
+  z-index: 110;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--space-sm);
+  cursor: pointer;
+  @include mixins.transition-smooth();
+  
+  @media (min-width: 1024px) {
+    display: none;
+  }
+  
+  &:hover {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  width: 24px;
+  height: 18px;
+  
+  span {
+    width: 100%;
+    height: 2px;
+    background: var(--museal-charcoal);
+    @include mixins.transition-smooth(all, 0.3s);
+    transform-origin: center;
+    
+    &:nth-child(1) {
+      margin-bottom: 6px;
+    }
+    
+    &:nth-child(2) {
+      margin-bottom: 6px;
+    }
+  }
+  
+  &.open {
+    span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+  }
+}
+
+.mobileOverlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 99;
+  animation: overlayFadeIn 0.3s ease-out;
+  
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 280px;
+  background: var(--museal-blanc);
+  border-right: 1px solid var(--museal-separateur);
+  z-index: 100;
+  
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-lg);
+  
+  @include mixins.transition-smooth(transform, 0.4s);
+  
+  // Mobile: caché par défaut
+  @media (max-width: 1023px) {
+    transform: translateX(-100%);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.1);
+    
+    &.mobileOpen {
+      transform: translateX(0);
+    }
+  }
+  
+  // Desktop: toujours visible
+  @media (min-width: 1024px) {
+    width: 240px;
+    position: relative;
+    height: 100vh;
+    flex-shrink: 0;
+  }
+}
+
+.brand {
+  margin-bottom: var(--space-xxl);
+  text-align: center;
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid rgba(212, 166, 49, 0.2);
+  animation: brand-appear 0.8s ease-out 0.2s both;
+}
+
+.brandTitle {
+  font-size: var(--text-xl);
+  font-weight: 400;
+  color: var(--museal-charcoal);
+  margin-bottom: var(--space-xs);
+  letter-spacing: 0.1em;
+  
+  background: linear-gradient(
+    135deg,
+    var(--museal-charcoal) 0%,
+    var(--ocre-intense) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brandSubtitle {
+  font-size: var(--text-sm);
+  color: var(--ocre-intense);
+  font-style: italic;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+// Bouton revoir l'intro - compact et discret
+.replayIntroButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  margin: var(--space-md) 0 var(--space-lg) 0;
+  background: transparent;
+  border: 1px solid rgba(212, 166, 49, 0.2);
+  border-radius: var(--radius-sm);
+  color: var(--ocre-doux);
+  font-size: var(--text-sm);
+  font-weight: 300;
+  cursor: pointer;
+  @include mixins.transition-smooth();
+  opacity: 0.7;
+  
+  &:hover {
+    opacity: 1;
+    background: rgba(212, 166, 49, 0.05);
+    border-color: rgba(212, 166, 49, 0.3);
+    
+    .replayIcon {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.replayIcon {
+  font-size: 0.9em;
+  @include mixins.transition-smooth(transform, 0.3s);
+  opacity: 0.8;
+}
+
+.replayLabel {
+  font-size: var(--text-xs);
+  letter-spacing: 0.02em;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.navItem {
+  opacity: 0;
+  animation: nav-item-appear 0.6s ease-out forwards;
+}
+
+.navLink {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--museal-charcoal);
+  text-decoration: none;
+  cursor: pointer;
+  @include mixins.transition-smooth();
+  
+  &:hover {
+    background: rgba(212, 166, 49, 0.08);
+  }
+  
+  &.active {
+    background: rgba(212, 166, 49, 0.12);
+    color: var(--ocre-intense);
+    box-shadow: 0 2px 8px rgba(212, 166, 49, 0.2);
+    
+    .navIcon {
+      transform: scale(1.2);
+      color: var(--ocre-intense);
+    }
+  }
+}
+
+.navIcon {
+  font-size: 1.2em;
+  color: var(--ocre-doux);
+  @include mixins.transition-smooth(all, 0.3s);
+  min-width: 20px;
+  text-align: center;
+}
+
+.navLabel {
+  font-size: var(--text-base);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.navDescription {
+  display: block;
+  font-size: var(--text-sm);
+  opacity: 0.7;
+  font-weight: 300;
+}
+
+.navFooter {
+  padding: var(--space-lg);
+  border-top: 1px solid var(--museal-separateur);
+  margin-top: auto;
+}
+
+.signature {
+  font-size: var(--text-sm);
+  color: var(--museal-charcoal-soft);
+  text-align: center;
+  opacity: 0.8;
+  
+  em {
+    font-style: italic;
+    font-weight: 300;
+  }
+}
+
+// Animations épurées - uniquement opacity
+@keyframes overlayFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes brand-appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes nav-item-appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

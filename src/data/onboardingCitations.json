@@ -1,0 +1,46 @@
+{
+    "citations": [
+      {
+        "id": "eveil",
+        "text": "Dans le silence de l'aurore, chaque créature murmure son secret...",
+        "author": "",
+        "phase": "intro"
+      },  
+      {
+        "id": "arbre",
+        "text": "Chaque branche raconte une histoire que seuls les rêveurs entendent",
+        "author": "",
+        "phase": "arbre"
+      },
+      {
+        "id": "arbre_alt",
+        "text": "Les racines touchent les étoiles, les feuilles caressent la terre",
+        "author": "",
+        "phase": "arbre"
+      },
+      {
+        "id": "transition",
+        "text": "Entre deux respirations, l'invisible se révèle...",
+        "author": "",
+        "phase": "transition"
+      },
+      {
+        "id": "oeuf",
+        "text": "L'invisible habite le creux, la lumière danse dans le vide",
+        "author": "",
+        "phase": "oeuf"
+      },
+      {
+        "id": "oeuf_alt",
+        "text": "Ce qui semble fragile porte en lui tous les possibles",
+        "author": "",
+        "phase": "oeuf"
+      },
+      {
+        "id": "finale",
+        "text": "Quand le rêve épouse la forme, l'art devient prière...",
+        "author": "",
+        "phase": "finale"
+      }
+    ]
+  }

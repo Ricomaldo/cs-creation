@@ -1,0 +1,59 @@
+@use 'tokens';
+@use 'mixins';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-interface);
+}
+
+body {
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  transition: background-color var(--transition-base);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Scroll smooth pour l'onboarding */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Classes utilitaires typographiques */
+.font-interface {
+  font-family: var(--font-interface);
+}
+
+.font-poetry {
+  font-family: var(--font-poetry);
+}
+
+/* Utilitaires globaux */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

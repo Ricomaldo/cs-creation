@@ -1,0 +1,155 @@
+@use '@/styles/mixins';
+
+.gallery {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-xxl);
+  
+  @media (max-width: 767px) {
+    margin-bottom: var(--space-xl);
+  }
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--museal-charcoal);
+  margin: 0 0 var(--space-md) 0;
+  letter-spacing: -0.02em;
+  
+  @media (max-width: 767px) {
+    font-size: 2rem;
+  }
+}
+
+.subtitle {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.125rem;
+  font-style: italic;
+  color: var(--ocre-intense);
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  @media (max-width: 767px) {
+    font-size: 1rem;
+  }
+}
+
+.featuredSection,
+.allWorksSection {
+  margin-bottom: var(--space-xxl);
+  
+  @media (max-width: 767px) {
+    margin-bottom: var(--space-xl);
+  }
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--museal-charcoal);
+  margin: 0 0 var(--space-xl) 0;
+  text-align: center;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -var(--space-md);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: var(--ocre-doux);
+  }
+  
+  @media (max-width: 767px) {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-lg);
+  }
+}
+
+// État vide
+.emptyState {
+  text-align: center;
+  padding: var(--space-xxl) var(--space-lg);
+  color: var(--museal-charcoal);
+  font-style: italic;
+  
+  p {
+    margin: 0;
+    font-size: 1.125rem;
+    opacity: 0.7;
+  }
+}
+
+// Grille pour les œuvres featured (plus grandes)
+.featuredGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xxl);
+  
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+  }
+  
+  @media (min-width: 768px) and (max-width: 1023px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Grille principale pour toutes les œuvres
+.artworkGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-lg);
+  
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--space-md);
+  }
+  
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--space-xl);
+  }
+}
+
+.galleryFooter {
+  margin-top: var(--space-xxl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--museal-creme);
+  text-align: center;
+}
+
+.stats {
+  font-size: 0.875rem;
+  color: rgba(26, 26, 26, 0.6);
+  margin: 0;
+  font-style: italic;
+}
+
+// Animation d'apparition progressive
+.gallery {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 

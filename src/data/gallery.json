@@ -1,0 +1,69 @@
+{
+    "artworks": [
+      {
+        "id": 1,
+        "nom": "Lumière d'Automne",
+        "technique": "Pastel et acrylique sur papier",
+        "annee": 2023,
+        "dimensions": "40 x 30 cm",
+        "prix": 180,
+        "description": "Un arbre solitaire face à la tempête, où chaque branche porte les couleurs de l'automne éternel",
+        "disponible": true,
+        "featured": false,
+        "image": "assets/gallery/lumiere-automne.webp",
+        "category": "paysages-oniriques"
+      },
+      {
+        "id": 2,
+        "nom": "L'Enfant des Cerisiers",
+        "technique": "Aquarelle et collage numérique",
+        "annee": 2024,
+        "dimensions": "50 x 40 cm", 
+        "prix": 250,
+        "description": "Une silhouette contemplative sous la voûte fleurie, dialogue entre solitude et beauté",
+        "disponible": true,
+        "featured": true,
+        "image": "assets/gallery/enfant-cerisiers.webp",
+        "category": "portraits-poetiques"
+      },
+      {
+        "id": 3,
+        "nom": "Fragments de Mémoire",
+        "technique": "Technique mixte et dentelle",
+        "annee": 2023,
+        "dimensions": "35 x 35 cm",
+        "prix": 220,
+        "description": "Collage intime où le regard émerge de la superposition des temps",
+        "disponible": false,
+        "featured": false,
+        "image": "assets/gallery/fragments-memoire.webp",
+        "category": "collages-intimes"
+      },
+      {
+        "id": 4,
+        "nom": "Maison du Petit Peuple",
+        "technique": "Sculpture miniature et mousse naturelle",
+        "annee": 2024,
+        "dimensions": "15 x 12 x 8 cm",
+        "prix": 120,
+        "description": "Habitat féérique où la nature reprend ses droits, invitation au merveilleux quotidien",
+        "disponible": true,
+        "featured": true,
+        "image": "assets/gallery/maison-petit-peuple.webp",
+        "category": "sculptures-feériques"
+      },
+      {
+        "id": 5,
+        "nom": "Le Gardien Moussu",
+        "technique": "Assemblage végétal et céramique",
+        "annee": 2024,
+        "dimensions": "20 x 15 x 12 cm",
+        "prix": 95,
+        "description": "Créature mystique née de l'alliance entre artisanat et nature sauvage",
+        "disponible": true,
+        "featured": false,
+        "image": "assets/gallery/gardien-moussu.webp",
+        "category": "sculptures-feériques"
+      }
+    ]
+  }

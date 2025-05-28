@@ -1,0 +1,55 @@
+/* Mixins C&S Création */
+@mixin transition-smooth($property: all, $duration: 0.3s) {
+    transition: $property $duration ease;
+  }
+  
+  @mixin hover-lift {
+    @include transition-smooth(transform, 0.2s);
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+  }
+  
+  @mixin artwork-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255,255,255,0.85);
+    opacity: 0;
+    @include transition-smooth(opacity);
+  }
+  
+  @mixin ocre-gradient($opacity: 1) {
+    background: linear-gradient(135deg, 
+      rgba(212, 166, 49, $opacity),
+      rgba(250, 242, 211, $opacity)
+    );
+  }
+  
+  @mixin responsive-grid($mobile: 1, $tablet: 2, $desktop: 3) {
+    display: grid;
+    grid-template-columns: repeat($mobile, 1fr);
+    gap: var(--space-md);
+    
+    @media (min-width: 768px) {
+      grid-template-columns: repeat($tablet, 1fr);
+    }
+    
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat($desktop, 1fr);
+    }
+  }
+  
+  @mixin center-absolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  @mixin sticky-center {
+    position: sticky;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }

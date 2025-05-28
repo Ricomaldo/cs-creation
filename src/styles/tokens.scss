@@ -1,0 +1,72 @@
+/* Design Tokens C&S Création */
+:root {
+    /* Typographie - Polices (utilise les variables Next.js) */
+    --font-interface: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-poetry: var(--font-crimson), Georgia, serif;
+    
+    /* Palette Onboarding - Ocre naturel */
+    --ocre-intense: #D4A631;
+    --ocre-doux: #E6C55A;
+    --ocre-whisper: #F4E6A8;
+    --ocre-nacre: #FAF2D3;
+    --blanc-final: #FFFFFF;
+    
+    /* Accents artistiques */
+    --rose-delicat: #E8B5C7;
+    --gris-anthracite: #2A2A2A;
+    --blanc-casse: #FDFDFC;
+    
+    /* Galerie Muséale */
+    --museal-blanc: #FFFFFF;
+    --museal-soft: #FDFDFD;
+    --museal-creme: #F8F8F8;
+    --museal-separateur: #E8E8E8;
+    --museal-charcoal: #1A1A1A;
+    --museal-charcoal-soft: #2D2D2D;
+    
+    /* Spacing Scale */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-xxl: 4rem;
+    
+    /* Typography Scale */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-xxl: 2rem;
+    --text-3xl: 1.875rem;
+    
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.6s ease;
+    
+    /* Border Radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-full: 9999px;
+  }
+  
+  /* Thèmes */
+  [data-theme="onboarding"] {
+    --bg-primary: var(--ocre-nacre);
+    --bg-secondary: var(--ocre-whisper);
+    --text-primary: var(--gris-anthracite);
+    --accent: var(--ocre-intense);
+    --accent-soft: var(--rose-delicat);
+  }
+  
+  [data-theme="gallery"] {
+    --bg-primary: var(--museal-blanc);
+    --bg-secondary: var(--museal-soft);
+    --text-primary: var(--museal-charcoal);
+    --accent: var(--museal-charcoal-soft);
+    --accent-soft: var(--museal-separateur);
+  }

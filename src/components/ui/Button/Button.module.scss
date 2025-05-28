@@ -1,0 +1,73 @@
+@use '@/styles/mixins';
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  cursor: pointer;
+  @include mixins.transition-smooth();
+  
+  &:focus-visible {
+    outline: 2px solid var(--ocre-intense);
+    outline-offset: 2px;
+  }
+  
+  &.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+// Variants
+.primary {
+  background: var(--ocre-intense);
+  color: white;
+  
+  &:hover:not(.disabled) {
+    background: var(--ocre-doux);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(212, 166, 49, 0.3);
+  }
+}
+
+.secondary {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--gris-anthracite);
+  border: 1px solid var(--ocre-whisper);
+  backdrop-filter: blur(8px);
+  
+  &:hover:not(.disabled) {
+    background: white;
+    border-color: var(--ocre-doux);
+    @include mixins.hover-lift;
+  }
+}
+
+.ghost {
+  background: transparent;
+  color: var(--text-primary);
+  
+  &:hover:not(.disabled) {
+    background: var(--ocre-whisper);
+  }
+}
+
+// Sizes
+.small {
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--text-sm);
+}
+
+.medium {
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--text-base);
+}
+
+.large {
+  padding: var(--space-md) var(--space-lg);
+  font-size: var(--text-lg);
+}
